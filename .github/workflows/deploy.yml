@@ -5,14 +5,6 @@ on:
     branches: [ main ]
 
 jobs:
-  deploy-backend:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    - name: Deploy to Render
-      run: |
-        curl -X POST https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
-
   deploy-frontend:
     runs-on: ubuntu-latest
     steps:
