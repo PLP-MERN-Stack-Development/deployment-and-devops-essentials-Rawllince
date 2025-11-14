@@ -17,7 +17,7 @@ const Item = require('./models/Item');
 const app = express();
 
 // Middleware
-Sentry.setupExpressErrorHandler(app);
+app.use(Sentry.Handlers.requestHandler());
 app.use(helmet());
 app.use(compression());
 app.use(morgan('combined'));
