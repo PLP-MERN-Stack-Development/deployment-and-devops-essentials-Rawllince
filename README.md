@@ -67,6 +67,45 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 5. Include screenshots of your CI/CD pipeline in action
 6. Add URLs to your deployed applications
 
+## Deployed Application
+
+- **Frontend URL**: [https://your-frontend-url.vercel.app](https://your-frontend-url.vercel.app)
+- **Backend API URL**: [https://your-backend-url.onrender.com](https://your-backend-url.onrender.com)
+- **Health Check Endpoint**: [https://your-backend-url.onrender.com/api/health](https://your-backend-url.onrender.com/api/health)
+
+## Deployment Process
+
+### Backend Deployment (Render)
+1. Create a new Web Service on Render
+2. Connect your GitHub repository
+3. Set build command: `npm install`
+4. Set start command: `npm start`
+5. Configure environment variables from `.env.example`
+6. Deploy
+
+### Frontend Deployment (Vercel)
+1. Connect your GitHub repository to Vercel
+2. Set build command: `npm run build`
+3. Set output directory: `build`
+4. Configure environment variables
+5. Deploy
+
+### MongoDB Atlas Setup
+1. Create a cluster on MongoDB Atlas
+2. Create a database user with read/write permissions
+3. Whitelist IP addresses (0.0.0.0/0 for development)
+4. Get connection string and add to environment variables
+
+### CI/CD Pipeline
+- GitHub Actions workflows are configured in `.github/workflows/`
+- CI workflow runs tests and builds on push/PR
+- CD workflow deploys on push to main branch
+
+### Monitoring
+- Health check endpoint: `/api/health`
+- Error tracking with Sentry
+- Logging with Morgan
+
 ## Resources
 
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
