@@ -3,6 +3,9 @@
   "outputDirectory": "client/build",
   "installCommand": "cd client && npm install",
   "framework": null,
+  "env": {
+    "REACT_APP_API_URL": "/api"
+  },
   "rewrites": [
     {
       "source": "/api/(.*)",
